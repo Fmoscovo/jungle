@@ -1,3 +1,4 @@
+# Path: jungle/jungle/config/routes.rb
 Rails.application.routes.draw do
 
   root to: 'products#index'
