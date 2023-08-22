@@ -11,7 +11,8 @@
     <%= product.category.name %>
   </td>
   <td>
-    <%= product.price %>
+  <%= custom_number_to_currency(product.price) %>
+
   </td>
   <td>
     <%= product.quantity %>

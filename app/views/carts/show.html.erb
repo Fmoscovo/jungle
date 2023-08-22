@@ -1,3 +1,6 @@
+
+<%# app/views/carts/show.html.erb %>
+
 <section class="cart-show">
 
   <header class="page-header">
@@ -25,7 +28,9 @@
             TOTAL:
           </th>
           <th>
-            <%= cart_subtotal_cents / 100.0 %>
+          <%= custom_number_to_currency(cart_subtotal_cents / 100.0) %>
+
+
           </th>
         </tr>
       </tfoot>

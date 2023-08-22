@@ -1,3 +1,4 @@
+# jungle/jungle/app/controllers/admin/products_controller.rb
 class Admin::ProductsController < ApplicationController
 
   def index
