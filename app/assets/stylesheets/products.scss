@@ -39,7 +39,8 @@ main section.categories-show {
       text-align: center;
       border-radius: 0.25em;
       border: 0.1em solid rgba(0, 130, 29, 0.3);
-      box-shadow: rgba(0, 130, 29, 0.16) 0px 3px 6px, rgba(0, 130, 29, 0.23) 0px 3px 6px;
+      box-shadow: rgba(0, 130, 29, 0.16) 0px 3px 6px,
+        rgba(0, 130, 29, 0.23) 0px 3px 6px;
       // transition: opacity 300ms linear;
 
       &:hover {
@@ -95,4 +96,16 @@ main section.categories-show {
       }
     }
   }
+}
+
+.sold-out-badge {
+  position: absolute;
+  top: 10px; /* Adjust as necessary */
+  left: 10px; /* Adjust as necessary */
+  background-color: red;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-weight: bold;
+  z-index: 1; /* To ensure the badge appears on top */
 }
