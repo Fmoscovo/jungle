@@ -20,9 +20,11 @@ class CartsController < ApplicationController
   private
 
   def modify_cart_delta(product_id, delta)
-    cart[product_id] = (cart[product_id] || 0) + delta
-    cart.delete(product_id) if cart[product_id] < 1
-    update_cart cart
-  end
+  puts "Current cart before modification: #{cart.inspect}"
+  cart[product_id] = (cart[product_id] || 0) + delta
+  cart.delete(product_id) if cart[product_id] < 1
+  puts "Current cart after modification: #{cart.inspect}"
+  update_cart cart
+end
 
 end
