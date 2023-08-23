@@ -1,16 +1,16 @@
-<section class="admin-products-index">
 
-  <header class="page-header">
+<section class="admin-products-index mt-5">
+
+  <header class="mb-4">
     <h1>Admin &raquo; All Products</h1>
   </header>
 
-  <div class="well">
-    <%= link_to '+ New Product', [:new, :admin, :product], class: 'btn btn-info' %>
+  <div class="mb-4">
+    <%= link_to '+ New Product', [:new, :admin, :product], class: 'btn btn-primary' %>
   </div>
 
-  <div class="panel panel-default products">
-
-    <table class="table table-bordered">
+  <div class="card">
+    <table class="table">
       <thead>
         <tr>
           <th colspan="2">Product</th>
@@ -24,7 +24,6 @@
         <%= render @products %>
       </tbody>
     </table>
-
   </div>
 
 </section>

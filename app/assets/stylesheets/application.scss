@@ -111,3 +111,10 @@ form.button_to {
 .text-danger {
   color: #f38792 !important;
 }
+
+.navbar {
+  margin-bottom: 20px;
+  .navbar-brand {
+    font-weight: bold;
+  }
+}
