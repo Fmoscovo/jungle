@@ -1,0 +1,42 @@
+// Place all the styles related to the Sessions controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+.sessions-form-container {
+  max-width: 600px;
+  margin: 2em auto;
+  padding: 2em;
+  background-color: #f7f7f7;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+
+  h2 {
+    font-size: 1.5em;
+    text-align: center;
+    margin-bottom: 1em;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+
+    label {
+      font-weight: bold;
+    }
+
+    input[type="submit"] {
+      background-color: #f38792;
+      color: white;
+      padding: 0.5em 1em;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.2s;
+
+      &:hover {
+        background-color: darken(#f38792, 10%);
+      }
+    }
+  }
+}
