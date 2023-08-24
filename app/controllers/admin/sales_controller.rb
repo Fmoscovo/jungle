@@ -37,13 +37,14 @@ class Admin::SalesController < ApplicationController
     else
       render :edit
     end
+  end
 
 
   private
 
   def sale_params
     params.require(:sale).permit(:name, :percent_off, :start_on, :end_on)
-end
+  end
 
   def ensure_admin
     # Here, check if the user is admin; if not, redirect them with a warning

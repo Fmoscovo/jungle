@@ -1,4 +1,4 @@
-<%= form_with(model: [:admin, sale], local: true) do |form| %>
+<%= form_for [:admin, sale] do |f| %>
   <% if sale.errors.any? %>
     <div class="alert alert-danger">
       <h4 class="alert-heading">
@@ -13,27 +13,27 @@
   <% end %>
 
   <div class="form-group">
-    <%= form.label :name %>
-    <%= form.text_field :name, class: 'form-control' %>
+    <%= f.label :name %>
+    <%= f.text_field :name, class: 'form-control' %>
   </div>
 
   <div class="form-group">
-    <%= form.label :percent_off %>
-    <%= form.number_field :percent_off, in: 1..100, step: 1, class: 'form-control' %>%
+    <%= f.label :percent_off %>
+    <%= f.number_field :percent_off, in: 1..100, step: 1, class: 'form-control' %>%
   </div>
 
   <div class="form-group">
-    <%= form.label :start_on %>
-    <%= form.date_select :start_on, class: 'form-control' %>
+    <%= f.label :start_on %>
+    <%= f.date_select :start_on, class: 'form-control' %>
   </div>
 
   <div class="form-group">
-    <%= form.label :end_on %>
-    <%= form.date_select :end_on, class: 'form-control' %>
+    <%= f.label :end_on %>
+    <%= f.date_select :end_on, class: 'form-control' %>
   </div>
 
   <div class="actions">
-    <%= form.submit class: "btn btn-primary" %>
+    <%= f.submit class: "btn btn-primary" %>
   </div>
 
 <% end %>
