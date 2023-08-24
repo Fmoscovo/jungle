@@ -13,7 +13,8 @@ class Product < ApplicationRecord
   def discounted_price
     active_sale = Sale.currently_active
     if active_sale
-      price * (1 - active_sale.percentage / 100)
+      price * (1 - active_sale.percent_off / 100.0)
+
     else
       price
     end
