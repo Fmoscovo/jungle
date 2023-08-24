@@ -3,6 +3,8 @@ class Admin::ProductsController < ApplicationController
   http_basic_authenticate_with name: ENV["ADMIN_USERNAME"], password: ENV["ADMIN_PASSWORD"]
 
   def index
+    @active_sale = Sale.where("start_on <= ? AND end_on >= ?", Date.today, Date.today).first
+
     @products = Product.order(id: :desc).all
   end
 

@@ -1,16 +1,17 @@
-
 <tr>
   <td>
-    <%= image_tag product.image.tiny.url %>
+    <% if product.image? %>
+      <%= image_tag product.image.tiny.url %>
+    <% else %>
+      No image available
+    <% end %>
   </td>
   <td>
     <h4><%= product.name %></h4>
     <p><%= product.description %></p>
   </td>
   <td>
-  <%= custom_number_to_currency(product.price) %>
-
-
+    <%= custom_number_to_currency(product.price) %>
   </td>
   <td>
     <div>
@@ -24,8 +25,6 @@
     </div>
   </td>
   <td>
-  <%= custom_number_to_currency(product.price * quantity) %>
-
-
+    <%= custom_number_to_currency(product.price * quantity) %>
   </td>
 </tr>

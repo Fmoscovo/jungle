@@ -1,6 +1,10 @@
 <tr>
   <td>
-    <%= image_tag product.image.tiny.url %>
+  <% if product.image? %>
+  <%= image_tag product.image.tiny.url %>
+<% else %>
+  No image available
+<% end %>
   </td>
   <td>
     <h4><%= product.name %></h4>
