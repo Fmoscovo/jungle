@@ -1,16 +1,22 @@
-
 <tr>
   <td>
-    <%= image_tag product.image.tiny.url %>
+    <% if product.image? %>
+      <%= image_tag product.image.tiny.url %>
+    <% else %>
+      No image available
+    <% end %>
   </td>
   <td>
     <h4><%= product.name %></h4>
     <p><%= product.description %></p>
   </td>
   <td>
+  <% if product.discounted_price < product.price %>
+  <span class="discounted"><%= custom_number_to_currency(product.price) %></span>
+  <span class="new-price"><%= custom_number_to_currency(product.discounted_price) %></span>
+<% else %>
   <%= custom_number_to_currency(product.price) %>
-
-
+<% end %>
   </td>
   <td>
     <div>
@@ -24,8 +30,6 @@
     </div>
   </td>
   <td>
-  <%= custom_number_to_currency(product.price * quantity) %>
-
-
+  <%= custom_number_to_currency(product.discounted_price * quantity) %>
   </td>
 </tr>

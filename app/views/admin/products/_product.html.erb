@@ -1,6 +1,10 @@
 <tr>
   <td>
-    <%= image_tag product.image.tiny.url %>
+  <% if product.image? %>
+  <%= image_tag product.image.tiny.url %>
+<% else %>
+  No image available
+<% end %>
   </td>
   <td>
     <h4><%= product.name %></h4>
@@ -11,7 +15,13 @@
     <%= product.category.name %>
   </td>
   <td>
-  <%= custom_number_to_currency(product.price) %>
+  <% if Sale.currently_active %>
+    <span class="discounted-price">
+        <%= custom_number_to_currency(product.discounted_price) %> (Discounted)
+    </span>
+<% else %>
+    <%= custom_number_to_currency(product.price) %>
+<% end %>
 
   </td>
   <td>

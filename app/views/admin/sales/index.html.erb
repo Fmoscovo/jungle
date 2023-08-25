@@ -1,0 +1,29 @@
+<h1>All Sales</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Percent Off</th>
+      <th>Start Date</th>
+      <th>End Date</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @sales.each do |sale| %>
+      <tr>
+        <td><%= sale.name %></td>
+        <td><%= sale.percent_off %>%</td>
+        <td><%= sale.start_on %></td>
+        <td><%= sale.end_on %></td>
+        <td>
+          <%= link_to 'Edit', edit_admin_sale_path(sale) %> |
+          <%= link_to 'Delete', admin_sale_path(sale), method: :delete, data: { confirm: "Are you sure?" } %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to 'New Sale', new_admin_sale_path %>

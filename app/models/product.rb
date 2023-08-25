@@ -9,4 +9,15 @@ class Product < ApplicationRecord
   validates :price, presence: true
   validates :quantity, presence: true
   validates :category, presence: true
+
+  def discounted_price
+    active_sale = Sale.currently_active
+    if active_sale
+      price * (1 - active_sale.percent_off / 100.0)
+
+    else
+      price
+    end
+  end
+
 end

@@ -19,6 +19,7 @@ Rails.application.routes.draw do
     root to: 'dashboard#show'
     resources :products, only: [:index, :new, :create, :destroy]
     resources :categories, only: [:index, :new, :create, :destroy]
+    resources :sales, only: [:index, :new, :create, :edit, :update, :destroy]
   end
 
   resources :users, only: [:new, :create, :show]

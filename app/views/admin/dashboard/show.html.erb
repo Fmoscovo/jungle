@@ -1,16 +1,30 @@
-<div class="card">
-  <div class="card-header">
-    Admin Dashboard
-  </div>
-  <div class="card-body">
-    <p>
-      Total number of products:
-      <%= link_to @product_count, [:admin, :products] %>
-    </p>
+<div class="container mt-5">
+  <h1 class="text-center">Admin Dashboard</h1>
 
-    <p>
-      Total number of categories:
-      <%= link_to @category_count, [:admin, :categories] %>
-    </p>
+  <div class="card mt-4">
+    <div class="card-header">
+      Summary
+    </div>
+    <div class="card-body">
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">
+          Total number of products:
+          <%= link_to @product_count, [:admin, :products] %>
+        </li>
+        <li class="list-group-item">
+          Total number of categories:
+          <%= link_to @category_count, [:admin, :categories] %>
+        </li>
+        <!-- Optionally, you can add active sales count here -->
+      </ul>
+    </div>
   </div>
+
+  <!-- Sales Management Section -->
+  <h2 class="mt-5">Sales Management</h2>
+
+  <!-- Optionally, display total number of active sales here -->
+
+  <!-- Include the sales list partial -->
+  <%= render 'admin/sales/list', sales: @sales %> <!-- You'll need to ensure @sales is set in your controller -->
 </div>

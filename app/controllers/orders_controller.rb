@@ -30,7 +30,7 @@ class OrdersController < ApplicationController
   def perform_stripe_charge
     Stripe::Charge.create(
       source:      params[:stripeToken],
-      amount:      cart_subtotal_cents,
+      amount: discounted_cart_subtotal_cents(enhanced_cart),
       description: "Khurram Virani's Jungle Order",
       currency:    'cad'
     )
@@ -40,7 +40,7 @@ class OrdersController < ApplicationController
     order = Order.new(
       email: params[:stripeEmail],
       total_cents: cart_subtotal_cents,
-      stripe_charge_id: stripe_charge.id, # returned by stripe
+      stripe_charge_id: stripe_charge.id # returned by stripe
     )
 
     enhanced_cart.each do |entry|
@@ -49,12 +49,12 @@ class OrdersController < ApplicationController
       order.line_items.new(
         product: product,
         quantity: quantity,
-        item_price: product.price,
-        total_price: product.price * quantity
+        item_price: product.discounted_price,
+        total_price: product.discounted_price * quantity
       )
     end
     order.save!
     order
-  end
+end
 
 end

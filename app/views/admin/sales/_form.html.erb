@@ -1,0 +1,39 @@
+<%= form_for [:admin, sale] do |f| %>
+  <% if sale.errors.any? %>
+    <div class="alert alert-danger">
+      <h4 class="alert-heading">
+        <%= pluralize(sale.errors.count, "error") %> prohibited this sale from being saved:
+      </h4>
+      <ul>
+        <% sale.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.label :name %>
+    <%= f.text_field :name, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :percent_off %>
+    <%= f.number_field :percent_off, in: 1..100, step: 1, class: 'form-control' %>%
+  </div>
+
+  <div class="form-group">
+    <%= f.label :start_on %>
+    <%= f.date_select :start_on, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :end_on %>
+    <%= f.date_select :end_on, class: 'form-control' %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit class: "btn btn-primary" %>
+  </div>
+
+<% end %>
