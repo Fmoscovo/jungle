@@ -1,11 +1,6 @@
 main section.products-index,
 main section.categories-show {
   .products {
-    // display: flex;
-    // flex-direction: row;
-    // flex-wrap: wrap;
-    // justify-content: space-around;
-
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 1.5em;
@@ -72,8 +67,9 @@ main section.categories-show {
         font-weight: 700;
         font-family: "Montserrat";
         span {
-          font-size: 0.8em;
+          font-size: 25px;
         }
+
         span:last-of-type {
           font-size: 0.5em;
         }
@@ -110,6 +106,14 @@ main section.categories-show {
   z-index: 1;
 }
 
-.discounted-price {
-  color: red; // or any other styling to indicate discounted price
+main section.products-index .products article h1 span.discounted-price,
+main section.categories-show .products article h1 span.discounted-price {
+  font-size: 23px;
+  color: red;
+}
+
+main section.products-index .products article h1 span.regular-price,
+main section.categories-show .products article h1 span.regular-price {
+  font-size: 23px;
+  color: rgba(0, 130, 29, 0.7);
 }
