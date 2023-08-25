@@ -30,7 +30,8 @@
               TOTAL:
             </th>
             <th>
-            <%= custom_number_to_currency(cart_subtotal_cents / 100.0) %>
+            <%= custom_number_to_currency(discounted_cart_subtotal_cents(enhanced_cart) / 100.0) %>
+
             </th>
           </tr>
         </tfoot>

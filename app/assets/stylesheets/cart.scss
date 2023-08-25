@@ -10,6 +10,18 @@
     color: white;
   }
 
+  .discounted {
+    text-decoration: line-through; // Strikethrough the original price
+    opacity: 0.6; // Fade the original price slightly
+    font-size: 0.9em; // Optionally reduce the font size
+    color: red; // Optionally make the original price red
+    margin-right: 5px; // Some margin to separate from the new price
+  }
+
+  .new-price {
+    color: green; // Highlight the discounted price in green
+  }
+
   // Styling for empty cart message
   .alert-info {
     font-size: 1.5em;
