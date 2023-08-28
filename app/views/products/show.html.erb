@@ -1,1 +1,31 @@
-jungle/jungle/app/views/products/show.html.erb
+
+<div class="product-show">
+  <div class="product-image">
+    <% if @product.image? %>
+      <%= image_tag @product.image.url %>
+    <% else %>
+      No image available
+    <% end %>
+  </div>
+  <div class="product-details">
+    <h1><%= @product.name %></h1>
+    <div class="category">
+      Category: <%= @product.category.name %>
+    </div>
+    <div class="price">
+      <% if Sale.currently_active %>
+        <span class="discounted-price">
+          <%= custom_number_to_currency(@product.discounted_price) %> (Discounted)
+        </span>
+      <% else %>
+        <%= custom_number_to_currency(@product.price) %>
+      <% end %>
+    </div>
+    <div class="quantity">
+      Quantity: <%= @product.quantity %>
+    </div>
+    <div class="description">
+      <%= @product.description %>
+    </div>
+  </div>
+</div>
