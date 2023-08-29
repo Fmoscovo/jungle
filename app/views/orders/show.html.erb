@@ -14,12 +14,14 @@
           <strong><%= line_item.product.name %></strong>
           <p><%= line_item.product.description %></p>
           <p>Quantity: <%= line_item.quantity %></p>
-          <p>Total: <%= number_to_currency(line_item.quantity * line_item.product.price) %></p>
+          <p>Total: <%= number_to_currency(line_item.quantity * line_item.product.price, precision: 2) %></p>
+
         </li>
       <% end %>
     </ul>
 
-    <h5>Total Amount: <%= number_to_currency(@order.total_cents / 100.0) %></h5>
+    <h5>Total Amount: <%= number_to_currency(@order.total_cents / 100.0, precision: 2) %></h5>
+
 
     <h5>Email: <%= @order.email %></h5>
   </div>
