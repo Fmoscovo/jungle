@@ -22,6 +22,16 @@ class OrdersController < ApplicationController
 
   private
 
+  def discounted_cart_subtotal_cents(cart)
+    subtotal = 0.0
+    cart.each do |entry|
+      product = entry[:product]
+      quantity = entry[:quantity]
+      subtotal += (product.discounted_price * quantity) # Assuming product has a discounted_price attribute
+    end
+    (subtotal * 100).to_i # Convert to cents and ensure it's an integer
+  end
+
   def empty_cart!
     # empty hash means no products in cart :)
     update_cart({})
@@ -29,17 +39,17 @@ class OrdersController < ApplicationController
 
   def perform_stripe_charge
     Stripe::Charge.create(
-      source:      params[:stripeToken],
+      source: params[:stripeToken],
       amount: discounted_cart_subtotal_cents(enhanced_cart),
       description: "Khurram Virani's Jungle Order",
-      currency:    'cad'
+      currency: 'cad'
     )
   end
 
   def create_order(stripe_charge)
     order = Order.new(
       email: params[:stripeEmail],
-      total_cents: cart_subtotal_cents,
+      total_cents: cart_subtotal_cents, # Make sure this method also returns cents as integer
       stripe_charge_id: stripe_charge.id # returned by stripe
     )
 
@@ -49,12 +59,12 @@ class OrdersController < ApplicationController
       order.line_items.new(
         product: product,
         quantity: quantity,
-        item_price: product.discounted_price,
-        total_price: product.discounted_price * quantity
+        item_price: (product.discounted_price * 100).to_i, # Assuming this also needs to be in cents
+        total_price: (product.discounted_price * quantity * 100).to_i
       )
     end
     order.save!
     order
-end
+  end
 
 end

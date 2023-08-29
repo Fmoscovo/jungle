@@ -1,8 +1,44 @@
-# Jungle
+# Jungle E-Commerce Web App
 
-A mini e-commerce application built with Rails 6.1 for purposes of teaching Rails by example.
+Welcome to Jungle, an e-commerce web app built with Ruby on Rails. This application allows users to browse, search, and purchase products from various categories.
 
-## Setup
+## Features
+
+- Browse and search products by category.
+- View detailed product descriptions, prices, and availability.
+- Add products to your cart and proceed to checkout.
+- Apply discounts and view the final order total.
+- User authentication and account management.
+- Admin dashboard for managing products, categories, and sales.
+
+## Screenshots
+
+Insert screenshots of your application here. You can include images like:
+
+![Screenshot 1](/path/to/screenshot1.png)
+![Screenshot 2](/path/to/screenshot2.png)
+
+## Video Demo
+
+Insert a link to your video demonstration here, showcasing the features and functionality of your application.
+
+## Installation
+
+1. Clone the repository:
+
+   $ git clone https://github.com/Fmoscovo/jungle.git
+
+   $ cd jungle
+
+2. install dependencies: $ bundle install
+
+3. Create and seed the database: $ rails db:setup
+
+4. Start the server: $ rails server
+
+5. Access the application at localhost:3000
+
+## Additional Setup
 
 1. Run `bundle install` to install dependencies
 2. Create `config/database.yml` by copying `config/database.example.yml`
@@ -19,7 +55,7 @@ If Rails is complaining about authentication to the database, uncomment the user
 
 ## Stripe Testing
 
-Use Credit Card # 4111 1111 1111 1111 for testing success scenarios.
+Use Credit Card # 4242424242424242 , CVC (any 3 digits) and DATE (any future date) for testing success scenarios.
 
 More information in their docs: <https://stripe.com/docs/testing#cards>
 
@@ -29,3 +65,7 @@ More information in their docs: <https://stripe.com/docs/testing#cards>
 - Bootstrap 5
 - PostgreSQL 9.x
 - Stripe
+
+```
+
+```

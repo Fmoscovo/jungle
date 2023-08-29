@@ -9,3 +9,4 @@ module CartHelper
     subtotal
   end
 end
+
