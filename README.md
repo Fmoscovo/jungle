@@ -13,14 +13,14 @@ Welcome to Jungle, an e-commerce web app built with Ruby on Rails. This applicat
 
 ## Screenshots
 
-Insert screenshots of your application here. You can include images like:
+![image](https://github.com/Fmoscovo/jungle/assets/128196275/f0556554-2bbe-4c93-b588-dca84f5973fb)
 
-![Screenshot 1](/path/to/screenshot1.png)
-![Screenshot 2](/path/to/screenshot2.png)
+![image](https://github.com/Fmoscovo/jungle/assets/128196275/67d8be47-2364-46cf-ba07-7fdbe6c30881)
+
 
 ## Video Demo
 
-Insert a link to your video demonstration here, showcasing the features and functionality of your application.
+https://github.com/Fmoscovo/jungle/assets/128196275/2ef5e2e8-829e-4659-a36e-0e46bebfd380
 
 ## Installation
 
@@ -43,7 +43,7 @@ Insert a link to your video demonstration here, showcasing the features and func
 1. Run `bundle install` to install dependencies
 2. Create `config/database.yml` by copying `config/database.example.yml`
 3. Create `config/secrets.yml` by copying `config/secrets.example.yml`
-4. Run `bin/rails db:reset` to create, load and seed db
+4. Run `bin/rails db:reset` to create, load, and seed db
 5. Create .env file based on .env.example
 6. Sign up for a Stripe account
 7. Put Stripe (test) keys into appropriate .env vars
@@ -55,7 +55,7 @@ If Rails is complaining about authentication to the database, uncomment the user
 
 ## Stripe Testing
 
-Use Credit Card # 4242424242424242 , CVC (any 3 digits) and DATE (any future date) for testing success scenarios.
+Use Credit Card # 4242424242424242 , CVC (any 3 digits), and DATE (any future date) for testing success scenarios.
 
 More information in their docs: <https://stripe.com/docs/testing#cards>
 
