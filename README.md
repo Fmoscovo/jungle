@@ -15,12 +15,16 @@ Welcome to Jungle, an e-commerce web app built with Ruby on Rails. This applicat
 
 Insert screenshots of your application here. You can include images like:
 
-![Screenshot 1](/path/to/screenshot1.png)
-![Screenshot 2](/path/to/screenshot2.png)
+![image](https://github.com/Fmoscovo/jungle/assets/128196275/f0556554-2bbe-4c93-b588-dca84f5973fb)
+
+![image](https://github.com/Fmoscovo/jungle/assets/128196275/f0556554-2bbe-4c93-b588-dca84f5973fb)
 
 ## Video Demo
 
-Insert a link to your video demonstration here, showcasing the features and functionality of your application.
+
+https://github.com/Fmoscovo/jungle/assets/128196275/5235dc26-7e2c-4278-b63c-d6fe6146a5a6
+
+
 
 ## Installation
 
